@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
 
 export enum TaskStatus {
     Created = 0,
@@ -19,4 +19,11 @@ export class Task {
 
     @Column({nullable:false, default: TaskStatus.Created})
     status: TaskStatus;
+
+    @CreateDateColumn()
+    createdAt: Date;
+
+    @UpdateDateColumn()
+    updatedAt: Date;
+    
 }
