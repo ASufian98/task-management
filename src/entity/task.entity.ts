@@ -20,9 +20,11 @@ export class Task {
     @Column({nullable:false, default: TaskStatus.Created})
     status: TaskStatus;
 
+    @Column({})
     @CreateDateColumn()
     createdAt: Date;
 
+    @Column()
     @UpdateDateColumn()
     updatedAt: Date;
     
